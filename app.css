@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Menlo;
+}
+
+#svg {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+}
+
+polygon {
+  fill: none;
+  stroke: black;
+}
+
+.line {
+  stroke: red;
+}
+
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+#mainline line {
+  cursor: copy;
+  stroke-width: 20px;
+  // stroke: #FFF;
+  stroke: #EEE;
+}
+
+rect#dragRect {
+  fill: rgba(0, 255, 0, 0.2);
+  stroke: green;
+  stroke-width: 0.5px;
+  stroke-dashoffset: 20;
+  stroke-dasharray: 5 5;
+  animation: dash 0.5s linear infinite;
+}
+
+.ruler {
+  fill: #ccc;
+}
+
+line.guideLine {
+  stroke: #ccc;
+  stroke-dasharray: 10 1;
+  stroke-width: 2px;
+}
+
+.point {
+  fill: black;
+  cursor: move;
+}
+
+.autoPoint {
+  fill: #AAA;
+  // pointer-events: none;
+}
+
+body.default {
+  cursor: plus;
+}
+body.col-resize {
+  cursor: col-resize;
+}
+body.row-resize {
+  cursor: row-resize;
+}
+
+#outer polygon {
+  stroke: blue;
+}
+#inner polygon {
+  stroke: red;
+}
+
+#controls {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: block;
+  width: 100px;
+  padding: 10px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 4px;
+}
+label {
+  display: block;
+  text-align: right;
+  -webkit-user-select: none;
+  user-select: none;
+
+}
